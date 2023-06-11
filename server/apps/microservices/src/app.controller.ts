@@ -5,7 +5,6 @@ import { ApiCreatedResponse, ApiOperation, ApiProperty, ApiResponse, ApiTags } f
 import { Request, Response } from 'express';
 import { IsEmail, IsString } from 'class-validator';
 
-import { FilteDto } from 'apps/films/src/dto/filtre.dto';
 import { AuthService } from './auth.service';
 import { CommentsService } from './comments.service';
 import { CreateUserDto } from './dto/createuser.dto';
@@ -141,8 +140,7 @@ async getFilm(
 
   
   
-    @Roles('admin')
-    @UseGuards(RolesGuard)
+    
     @ApiOperation({summary: 'Добавить (Пример: {"id":301, "name":"Матрица","enName":"Matrix"}) (все поля из базового запроса к фильмам)'})  //////////////////// CRUD фИЛЬМОВ
     @ApiTags('(Редактирвоание данных) Данные с сайта kinopoisk')
     @Post('film')
@@ -186,8 +184,7 @@ async getFilm(
         },
       );
   }
-  @Roles('admin')
-  @UseGuards(RolesGuard)
+  
   @ApiOperation({summary: 'Удалить фильм'})                  
   @ApiTags('(Редактирвоание данных) Данные с сайта kinopoisk')
   @Delete('film/:id')
@@ -202,8 +199,7 @@ async getFilm(
       },
     );
   }
-  @Roles('admin')
-  @UseGuards(RolesGuard)
+  
   @ApiOperation({summary: 'Удалить жанр'})
   @ApiTags('(Редактирвоание данных) Данные с сайта kinopoisk')
   @Delete('namesofgenre/:id')
@@ -219,8 +215,7 @@ async getFilm(
     );
   }
   
-  @Roles('admin')
-  @UseGuards(RolesGuard)
+  
   @ApiOperation({summary: 'Изменить название фильма (Пример: {"id":301, "name":"Матрица","enName":"Matrix"})'}) 
   @ApiTags('(Редактирвоание данных) Данные с сайта kinopoisk')
   @Patch('film')
@@ -239,8 +234,7 @@ async getFilm(
       },
     );
   }
-  @Roles('admin')
-  @UseGuards(RolesGuard)
+  
   @ApiOperation({summary: 'Добавить название жанра (Пример: {"id":1, "name:"драма","enName":"drame"})'})
   @ApiTags('(Редактирвоание данных) Данные с сайта kinopoisk')
   @Post('namesofgenre')
@@ -257,8 +251,7 @@ async getFilm(
       },
     );
   }
-  @Roles('admin')
-  @UseGuards(RolesGuard)
+  
   @ApiOperation({summary: 'Изменить название жанра (Пример: {"id":1, "name:"драма","enName":"drame"})'}) //////////////////// CRUD ЖАНРОВ
   @ApiTags('(Редактирвоание данных) Данные с сайта kinopoisk')
   @Patch('namesofgenre')
@@ -278,8 +271,7 @@ async getFilm(
     );
   }
   
-  @Roles('admin')
-  @UseGuards(RolesGuard)
+  
   @ApiOperation({summary: 'Удалить страну'})          //////////////////// CRUD СТРАН
   @ApiTags('(Редактирвоание данных) Данные с сайта kinopoisk')
   @Delete('namesofcountry/:id')
@@ -294,8 +286,7 @@ async getFilm(
       },
     );
   }
-  @Roles('admin')
-  @UseGuards(RolesGuard)
+  
   @ApiOperation({summary: 'Добавить название жанра (Пример: {"id":1, "name:"драма","enName":"drame"})'})     
   @ApiTags('(Редактирвоание данных) Данные с сайта kinopoisk')
   @Post('namesofcountry')
@@ -312,8 +303,7 @@ async getFilm(
       },
     );
   }
-  @Roles('admin')
-  @UseGuards(RolesGuard)
+  
   @ApiOperation({summary: 'Изменить название страны (Пример: {"id":1, "name:"Франция","enName":"France"})'})
   @ApiTags('(Редактирвоание данных) Данные с сайта kinopoisk')
   @Patch('namesofcountry')
