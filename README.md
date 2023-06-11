@@ -1,4 +1,4 @@
-# Ivi-like streaming service
+# (FORK)Ivi-like streaming service
 
 This is a NextJS-based streaming service SPA. The App uses Kinopoisk API as data source.  
 There are collections of movies that you can filter, sort and even edit genres and movie names or delete them(as admin).
